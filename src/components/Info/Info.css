@@ -1,0 +1,15 @@
+.biglist {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.list {
+  list-style-type: none;
+  /* background-color: blue; */
+}
+
+#spacex {
+  font-size: 40px;
+}

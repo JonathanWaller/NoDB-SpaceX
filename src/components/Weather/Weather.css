@@ -1,0 +1,19 @@
+.weathermain {
+  /* list-style-type: none; */
+  /* background-color: blue; */
+  display: flex;
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+
+.weatherlistmain {
+  list-style-type: none;
+  background-color: white;
+  width: 7vw;
+  font-size: 10px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,19 @@
+/* .launches {
+  display: flex;
+} */
+
+.mainlaunch {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.launchcard {
+  border: 1px solid black;
+  width: 25vw;
+  list-style-type: none;
+}
+
+.addbutton {
+  cursor: pointer;
+}
