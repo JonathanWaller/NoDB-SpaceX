@@ -56,7 +56,7 @@ class Launches extends Component {
     });
     return (
       <div>
-        <h1>Past Launches</h1>
+        <p className="launchtitle">Past Launches</p>
         <div className="mainlaunch">{launchesList}</div>
         <Footer />
       </div>

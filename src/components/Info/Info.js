@@ -23,7 +23,7 @@ class Info extends Component {
       <div>
         <div className="infomain">
           <div className="list">
-            <p id="spacex">SpaceX</p>
+            <p id="spacex">Company Information</p>
             <p>Founder & CEO: {info.ceo}</p>
             <p> Year Founded: {info.founded}</p>
             <p># of Employees: {info.employees} </p>
@@ -35,7 +35,7 @@ class Info extends Component {
                 info.headquarters.state}
             </p>
             <div>
-              <p>Company Description:</p>
+              <p />
               <p>{info.summary}</p>
             </div>
           </div>

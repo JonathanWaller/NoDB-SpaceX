@@ -30,7 +30,7 @@ class Rockets extends Component {
     });
     return (
       <div>
-        <h1>Rockets</h1>
+        <p className="rocketstitle">Rockets</p>
         <div className="rocketsmain">{rocketsList}</div>
       </div>
     );

@@ -27,33 +27,29 @@ class ViewList extends Component {
     });
   };
 
-  updateHandler = (id, info) => {
+  // updateHandler = (id, info) => {
+  //   axios
+  //     .put(`/api/updateLaunch/${id}`, { mission_name: info })
+  //     .then(response => {
+  //       this.setState({
+  //         viewList: response.data,
+  //         userInput: ""
+  //       });
+  //     });
+  // };
+
+  updateHandler = id => {
     axios
-      .put(`/api/updateLaunch/${id}`, { mission_name: info })
+      .put(`api/updateLaunch/${id}`, { mission_name: this.state.userInput })
       .then(response => {
-        this.setState({
-          viewList: response.data,
-          userInput: ""
-        });
+        console.log(response);
+        this.setState({ viewList: response.data });
       });
   };
 
-  changeHandler = val => {
-    this.setState({ userInput: val });
+  handleInput = event => {
+    this.setState({ userInput: event.target.value });
   };
-
-  //   updateHandler(id, info) {
-  //     axios.put("/api/updateList").then(response => {
-  //       console.log(response);
-  //       this.setState({ viewList: response.data });
-  //     });
-  //   }
-
-  //   updatePersonHandler = (id, name) => {
-  //     axios.put(`/api/people/${id}`, { name }).then(response => {
-  //       this.setState({ people: response.data, editing: false });
-  //     });
-  //   };
 
   render() {
     // console.log(this.state.viewList);
@@ -72,14 +68,22 @@ class ViewList extends Component {
           <li>
             <iframe src={newClip} width="450" height="300" frameBorder="0" />
           </li>
-          <button onClick={() => this.deleteHandler(elem.flight_number)}>
-            Delete
+          <div className="inputwrapper">
+            <input
+              onChange={event => this.handleInput(event)}
+              placeholder="Enter new name"
+            />
+            {/* <p>{this.state.userInput}</p> */}
+            <button onClick={() => this.updateHandler(elem.flight_number)}>
+              Update Mission Name
+            </button>
+          </div>
+          <button
+            onClick={() => this.deleteHandler(elem.flight_number)}
+            className="watchbutton"
+          >
+            Delete From List
           </button>
-          <button onClick={() => this.updateHandler(elem.flight_number)}>
-            Update
-          </button>
-          <input onChange={e => this.changeHandler(e.target.value)} />
-          {/* <p>{this.state.userInput}</p> */}
         </ul>
       );
     });

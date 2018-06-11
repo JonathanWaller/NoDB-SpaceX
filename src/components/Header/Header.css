@@ -1,7 +1,18 @@
 .headermain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
-  height: 30vh;
+  height: 20vh;
   width: auto;
-  background-image: url("https://si.wsj.net/public/resources/images/BN-TM561_spacel_IM_20170517172654.jpg");
-  background-size: cover;
+  /* background-color: black; */
+  color: white;
+  background-image: url("https://cdn.eso.org/images/thumb700x/potw1339a.jpg");
+  /* background-image: url("https://si.wsj.net/public/resources/images/BN-TM561_spacel_IM_20170517172654.jpg"); */
+  /* background-image: url("http://www.unoosa.org/res/timeline/index_html/space-2.jpg"); */
+  /* background-size: cover; */
+}
+
+.spacex {
+  font-size: 50px;
 }

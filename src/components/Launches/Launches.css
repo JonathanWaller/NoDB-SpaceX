@@ -5,8 +5,10 @@
 }
 
 .launchcard {
-  border: 0.5px solid #a6a6a6;
-  box-shadow: 5px 10px #a6a6a6;
+  border: 0.5px solid #cccccc;
+  box-shadow: 8px 8px 10px #a6a6a6;
+  /* box-shadow: 5px 10px #a6a6a6; */
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
   margin: 10px;
   height: 23vh;
   width: 23vw;
@@ -23,4 +25,8 @@
 
 a {
   color: black;
+}
+
+.launchtitle {
+  font-size: 50px;
 }
