@@ -1,0 +1,31 @@
+.mainlist {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* .launchcard {
+  border: 0.5px solid #a6a6a6;
+  box-shadow: 5px 10px #a6a6a6;
+  margin: 10px;
+  height: 23vh;
+  width: 23vw;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+} */
+
+.viewcard {
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 60vh;
+  width: 30vw;
+  list-style-type: none;
+  border: 0.5px solid #a6a6a6;
+  box-shadow: 5px 10px #a6a6a6;
+  margin: 10px;
+}

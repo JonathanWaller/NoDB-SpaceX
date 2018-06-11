@@ -1,0 +1,11 @@
+.mainphoto {
+  max-width: 1000px;
+  height: 500px;
+  /* margin: auto; */
+  margin: 100px auto 100px auto;
+  /* background-color: blue; */
+  background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/T4lXCR4/astronaut-in-space-earth-and-hurricane-in-background_v1crrpcu__F0000.png");
+  /* background-image: url("http://m.wsj.net/video/20170215/021517indiaspace1/021517indiaspace1_1280x720.jpg"); */
+  background-size: cover;
+  background-attachment: fixed;
+}

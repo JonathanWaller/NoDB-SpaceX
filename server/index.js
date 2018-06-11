@@ -24,6 +24,7 @@ app.get("/api/getWeather", wc.getWeather);
 app.get("/api/getViewList", vc.getViewList);
 app.post("/api/addLaunch", vc.addLaunch);
 app.delete("/api/deleteLaunch/:id", vc.deleteLaunch);
+app.put("/api/updateLaunch/:id", vc.updateLaunch);
 
 const port = process.env.PORT || 3001;
 app.listen(port, () => console.log(`Listeninggg on ${port}`));

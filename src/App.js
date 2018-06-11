@@ -7,6 +7,8 @@ import Weather from "./components/Weather/Weather";
 import Header from "./components/Header/Header";
 import NavBar from "./components/NavBar/NavBar";
 import ViewList from "./components/ViewList/ViewList";
+import Footer from "./components/Footer/Footer";
+import Parallax from "./components/Parallax/Parallax";
 import axios from "axios";
 
 class App extends Component {
@@ -62,7 +64,9 @@ class App extends Component {
           home={this.homeHandler}
           watch={this.watchHandler}
         />
-        {this.state.homeShow ? <Info /> && <Rockets /> : null}
+        {this.state.homeShow ? <Info /> : null}
+        {this.state.homeShow ? <Parallax /> : null}
+        {this.state.homeShow ? <Rockets /> : null}
         {this.state.launchesShow ? <Launches /> : null}
         {this.state.listShow ? <ViewList /> : null}
         {/* <Info /> */}
@@ -70,6 +74,7 @@ class App extends Component {
         {/* <Launches /> */}
         {/* {this.state.rocketsShow ? <Rockets /> : <Launches />} */}
         {/* <ViewList /> */}
+        {/* <Footer /> */}
       </div>
     );
   }

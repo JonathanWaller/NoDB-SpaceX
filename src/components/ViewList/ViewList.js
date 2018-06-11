@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Footer from "../Footer/Footer";
 import "./ViewList.css";
 
 class ViewList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      viewList: []
+      viewList: [],
+      userInput: "f"
     };
     this.deleteHandler = this.deleteHandler.bind(this);
   }
@@ -23,6 +25,21 @@ class ViewList extends Component {
       // console.log(response);
       this.setState({ viewList: response.data });
     });
+  };
+
+  updateHandler = (id, info) => {
+    axios
+      .put(`/api/updateLaunch/${id}`, { mission_name: info })
+      .then(response => {
+        this.setState({
+          viewList: response.data,
+          userInput: ""
+        });
+      });
+  };
+
+  changeHandler = val => {
+    this.setState({ userInput: val });
   };
 
   //   updateHandler(id, info) {
@@ -46,27 +63,31 @@ class ViewList extends Component {
       let newClip = clip.replace("watch?v=", "embed/");
       // let testClip = "https://www.youtube.com/watch?v=0a_00nJ_Y88";
       return (
-        <ul key={elem.flight_number} className="launchcard">
+        <ul key={elem.flight_number} className="viewcard">
           <li>Mission: {elem.mission_name}</li>
           <li>Year: {elem.launch_year}</li>
           <li>
             <img src={patches} width="60" height="60" />
           </li>
           <li>
-            <iframe src={newClip} frameBorder="0" />
+            <iframe src={newClip} width="450" height="300" frameBorder="0" />
           </li>
           <button onClick={() => this.deleteHandler(elem.flight_number)}>
             Delete
           </button>
-          <button>Update</button>
-          {/* <li>{elem.cost_per_launch}</li> */}
+          <button onClick={() => this.updateHandler(elem.flight_number)}>
+            Update
+          </button>
+          <input onChange={e => this.changeHandler(e.target.value)} />
+          {/* <p>{this.state.userInput}</p> */}
         </ul>
       );
     });
     return (
       <div>
         <p>Watch List</p>
-        {myViewList}
+        <div className="mainlist">{myViewList}</div>
+        <Footer />
       </div>
     );
   }

@@ -33,11 +33,11 @@ class Weather extends Component {
     return (
       <div className="weathermain">
         <ul className="weatherlistmain">
-          <li>Current City: {weather.name}</li>
-          <li>{weather.main && weather.main.temp} F</li>
-          <li>Humdity: {weather.main && weather.main.humidity}</li>
-          <li>{weather.weather && weather.weather[0].description}</li>
-          <li>{weather.weather && weather.weather[0].main}</li>
+          <li>City: {weather.name}</li>
+          <li>Current Temp: {weather.main && weather.main.temp} F</li>
+          {/* <li>Humdity: {weather.main && weather.main.humidity}</li> */}
+          {/* <li>{weather.weather && weather.weather[0].description}</li> */}
+          <li>Conditions: {weather.weather && weather.weather[0].main}</li>
 
           {/* <li>{weather.weather && weather.weather[0].id}</li> */}
         </ul>

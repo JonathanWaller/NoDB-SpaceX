@@ -14,12 +14,21 @@ const addLaunch = (req, res, next) => {
 };
 
 const deleteLaunch = (req, res, next) => {
-  console.log(viewList);
+  // console.log(viewList);
   let indexOfLaunch = viewList.findIndex(
     launch => launch.flight_number == req.params.id
     // viewList => viewList.id == req.params.id
   );
   viewList.splice(indexOfLaunch, 1);
+  res.status(200).json(viewList);
+};
+
+const updateLaunch = (req, res, next) => {
+  const { mission_name } = req.body;
+  const { id } = req.params;
+  let listCopy = viewList.slice();
+  let indexOfLaunch = viewList.findIndex(launch => launch.flight_number === id);
+  viewList[indexOfLaunch].mission_name = mission_name;
   res.status(200).json(viewList);
 };
 
@@ -38,5 +47,6 @@ const deleteLaunch = (req, res, next) => {
 module.exports = {
   getViewList,
   addLaunch,
-  deleteLaunch
+  deleteLaunch,
+  updateLaunch
 };

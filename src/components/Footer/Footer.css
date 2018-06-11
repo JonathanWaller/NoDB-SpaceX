@@ -1,0 +1,13 @@
+.flymain {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.flyboy {
+  border-radius: 50%;
+  height: 400px;
+  width: 400px;
+  margin: 500px auto 0 auto;
+  background-image: url("https://thenypost.files.wordpress.com/2017/09/feature.jpg?quality=90&strip=all&w=618&h=410&crop=1");
+  animation: App-logo-spin infinite 20s linear;
+}

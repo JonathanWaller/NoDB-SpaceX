@@ -20,17 +20,18 @@ class Rockets extends Component {
   render() {
     let rocketsList = this.state.rockets.map((elem, ind) => {
       return (
-        <ul key={elem.id} className="rocketcard">
-          <li>{elem.name}</li>
-          <li>{elem.first_flight}</li>
-          <li>{elem.cost_per_launch}</li>
-        </ul>
+        <div key={elem.id} className="rocketcard">
+          <p>Name: {elem.name}</p>
+          <p>First Flight: {elem.first_flight}</p>
+          <p>Cost per Launch: ${elem.cost_per_launch}</p>
+          <p>{elem.description}</p>
+        </div>
       );
     });
     return (
       <div>
         <h1>Rockets</h1>
-        {rocketsList}
+        <div className="rocketsmain">{rocketsList}</div>
       </div>
     );
   }

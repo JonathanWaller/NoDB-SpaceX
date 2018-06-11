@@ -1,9 +1,9 @@
 .navbar {
+  font-family: "Roboto", sans-serif;
   display: flex;
   justify-content: space-evenly;
   list-style-type: none;
   font-size: 20px;
-  /* background-color: blue; */
 }
 
 .link {
