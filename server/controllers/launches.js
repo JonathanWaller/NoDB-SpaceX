@@ -11,6 +11,14 @@ const getLaunches = (req, res) => {
   res.status(200).json(launches);
 };
 
+const getFilteredLaunches = (req, res, next) => {
+  const { filter } = req.query;
+  let filteredLaunches = launches.filter(launch =>
+    launch.launch_year.includes(filter)
+  );
+  res.status(200).json(filteredLaunches);
+};
+
 module.exports = {
   getLaunches
 };

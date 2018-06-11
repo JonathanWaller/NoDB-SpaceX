@@ -23,20 +23,9 @@ const deleteLaunch = (req, res, next) => {
   res.status(200).json(viewList);
 };
 
-// const updateLaunch = (req, res, next) => {
-//   const { mission_name } = req.body;
-//   const { id } = req.params;
-//   let listCopy = viewList.slice();
-//   let indexOfLaunch = viewList.findIndex(launch => launch.flight_number === id);
-//   viewList[indexOfLaunch].mission_name = mission_name;
-//   res.status(200).json(viewList);
-// };
-
 const updateLaunch = (req, res, next) => {
   let updateId = req.params.id;
   console.log(req.body);
-  // let missionName = req.body.mission_name;
-  // let listCopy = viewList.slice();
   viewList.forEach(
     launch =>
       launch.flight_number == updateId ? Object.assign(launch, req.body) : null

@@ -8,7 +8,8 @@ class Launches extends Component {
     super(props);
     this.state = {
       launches: [],
-      viewList: []
+      viewList: [],
+      filter: ""
     };
   }
 
@@ -23,8 +24,16 @@ class Launches extends Component {
     axios.post("/api/addLaunch", launch);
   }
 
+  // filterLaunchHandler = e => {
+  //   this.setState({ filter: e.target.value });
+
+  //   axios.get(`/api/people/filter?filter=${e.target.value}`).then(response => {
+  //     this.setState({ launches: response.data });
+  //   });
+  // };
+
   render() {
-    // console.log(this.state.launches);
+    console.log(this.state.launches);
     let launchesList = this.state.launches.map((elem, ind) => {
       let patches = elem.links.mission_patch_small;
       let link = elem.links.article_link;
@@ -57,6 +66,12 @@ class Launches extends Component {
     return (
       <div>
         <p className="launchtitle">Past Launches</p>
+        {/* <input
+          value={this.state.filter}
+          onChange={event => this.filterLaunchHandler(event)}
+          placeholder="search year"
+        /> */}
+        {/* <button onClick={() => this.searchHandler()}>Search</button> */}
         <div className="mainlaunch">{launchesList}</div>
         <Footer />
       </div>
